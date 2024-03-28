@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Libre+Baskerville&family=Ubuntu:wght@300&family=Varela+Round&display=swap');
+
+
+body {
+    background-color: black;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    font-family: "Ubuntu", sans-serif;
+
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 10vh;
+    margin: 1vh;
+    border-radius: 5px;
+    background-color: rgb(36,36,36);
+    color: aliceblue;
+}
+nav ul li {
+    padding: 1%;
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+.brand img {
+    width: 8vh;
+    padding-right: 10%;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.container {
+    position: relative;
+    min-height: 80vh;
+    background-color: black;
+    color: white;
+    font-family: "Varela Round", sans-serif;
+    display: flex;
+    overflow-x: auto;
+    /* overflow-y: scroll; */
+    justify-content: center;
+    width: 70%;
+    margin: 4vh auto;
+    padding: 2vh 2vw;
+    border-radius: 12px;
+    background-image: url(./bg.jpg);
+}
+.container::-webkit-scrollbar {
+    display: none;
+  }
+  .desi {
+    font-size: 4vh;
+  }
+.songList {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 1vh;
+}
+#progressBar {
+    margin-top: 1vh;
+    grid-area: 1/2/2/3;
+    /* width: 80vw; */
+    cursor: pointer;
+}
+/* .bottom {
+    position: sticky;
+    bottom: 0;
+    height: 10vh;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh;
+    border-radius: 5px;
+    background-color: rgb(36,36,36);
+} */
+.bottom {
+    position: sticky;
+    bottom: 0;
+    background-color: black;
+    color: aliceblue;
+    display: grid;
+    grid-template-columns: 9vw 80vw 9vw;
+    grid-template-rows: auto auto auto;
+    margin: 1vh;
+    border-radius: 5px;
+    background-color: rgb(36,36,36);
+}
+
+.icons {
+    grid-area: 2/2/3/3;
+    justify-self: center;
+    margin-top: 1vh;
+}
+.cards {
+    display: flex;
+    /* flex-direction: column; */
+    margin-top: 1vh;
+    height: fit-content;
+}
+
+.songItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    /* align-items: center; */
+    color: white;
+    border-radius: 5px;
+    flex: 0 0 auto;
+    height: 20vh;
+    background-color: rgb(19,19,18);
+    margin:1vh;
+    padding: 2vh;
+}
+.songItem:hover {
+    background-color: rgb(36,36,36);
+    /* transform: scale(1.1); (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+.songItem .albumCover {
+
+    align-self: center
+ 
+}
+.songName {
+    display: flex;
+    flex-wrap: wrap;
+}
+.timeStamp {
+    display: flex;
+    justify-content: center;
+    font-size: 2vh;
+    /* margin: 0 2vw; */
+}
+.timeStamp i {
+    cursor: pointer;
+}
+
+.bottom i {
+    cursor: pointer;
+    margin: 0 1vw;
+    font-size: 3vh;
+}
+#masterSongName {
+    grid-area: 3/2/4/3;
+    justify-self: center;
+}
+
+.songInfo {
+    grid-area: 3/2/4/3; 
+    justify-self: center;   
+    margin-bottom: 1vh;
+    font-family: "Varela Round", sans-serif;
+}
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+.songItem i {
+    font-weight: bolder;
+    margin-left: 1vh;
+}
+@media (max-width: 768px) {
+    .container {      
+    background: url('./zane-lee-IHj0xtWtLKE-unsplash.jpg') repeat-x;
+    background-size: contain;
+    transition: 0.4s ease-in-out;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    /* Media query for larger screens */
+    .cards {
+      overflow-x: visible; /* Reset overflow for larger screens */
+    }
+  }
