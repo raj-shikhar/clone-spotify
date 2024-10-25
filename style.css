@@ -57,7 +57,7 @@ nav ul li {
     margin: 4vh auto;
     padding: 2vh 2vw;
     border-radius: 12px;
-    background-image: url(./bg.jpg);
+    background-image: url(./Black&BrownRainVideo.gif);
 }
 .container::-webkit-scrollbar {
     display: none;
@@ -92,18 +92,7 @@ nav ul li {
     border-radius: 5px;
     background-color: rgb(36,36,36);
 } */
-.bottom {
-    position: sticky;
-    bottom: 0;
-    background-color: black;
-    color: aliceblue;
-    display: grid;
-    grid-template-columns: 9vw 80vw 9vw;
-    grid-template-rows: auto auto auto;
-    margin: 1vh;
-    border-radius: 5px;
-    background-color: rgb(36,36,36);
-}
+
 
 .icons {
     grid-area: 2/2/3/3;
@@ -130,10 +119,13 @@ nav ul li {
     background-color: rgb(19,19,18);
     margin:1vh;
     padding: 2vh;
+
+    /*newwww*/
+    transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 .songItem:hover {
     background-color: rgb(36,36,36);
-    /* transform: scale(1.1); (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    transform: scale(1.05); /*(150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 .songItem .albumCover {
 
@@ -178,15 +170,93 @@ nav ul li {
     font-weight: bolder;
     margin-left: 1vh;
 }
-@media (max-width: 768px) {
+.bottom {
+    position: sticky;
+    bottom: 1vh;
+    background-color: black;
+    color: aliceblue;
+    display: grid;
+    grid-template-columns: 3vw 80vw 3vw;
+    grid-template-rows: auto auto auto;
+    width: 86vw;
+    justify-content: center;
+    top: auto;
+    left: 6vw;
+    border-radius: 15px;
+    background-color: rgb(36,36,36);
+}
+
+.about {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 20px;
+}
+.about:hover {
+    background-color: rgb(46,46,46);
+    transform: scale(1.05);
+}
+.home {
+    background-color: black;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 20px;
+}
+.home:hover {
+    background-color: rgb(46,46,46);
+    transform: scale(1.05);
+}
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 10vh; /* Start 10% from the top */
+    bottom: 30vh;
+    left: 15vw;
+    width: 70vw; 
+    height: 60vh; /* 90% of the viewport height */
+    background-color: rgba(0, 0, 0, 0.5); /* Background color with opacity */
+}
+
+.popup-content {
+    background-color: #1e1e1e; /* Dark background */
+    color: #ffffff; /* Light text color */
+    height: 60vh;
+    width: 70vw;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center align text */
+}
+
+.popup-content h2 {
+    margin: 0 0 15px 0; /* Space below heading */
+}
+
+.popup-content p {
+    line-height: 1.5; /* Readability */
+    margin: 10px 0; /* Space between paragraphs */
+}
+
+.close {
+    cursor: pointer; /* Change cursor to pointer */
+    font-size: 28px; /* Size of the close button */
+    color: #ffffff; /* Close button color */
+    float: right; /* Position close button to the right */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Change color on hover */
+}
+
+@media (max-width: 544px) {
     .container {      
-    background: url('./zane-lee-IHj0xtWtLKE-unsplash.jpg') repeat-x;
+    background: url('./BlackandWhiteModernPlay.gif') repeat-x;
     background-size: contain;
     transition: 0.4s ease-in-out;
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 544px) {
     /* Media query for larger screens */
     .cards {
       overflow-x: visible; /* Reset overflow for larger screens */
