@@ -1,4 +1,4 @@
-console.log("welcome to spotify clone");
+console.log("welcome to spotify clone indexer");
 
 // initialize variables
 let songIndex = 0;
@@ -29,6 +29,116 @@ songItems.forEach((element, i)=>{
     element.getElementsByClassName("songName")[0].style.fontSize = "2vh"; 
     element.getElementsByClassName("songName")[0].style.fontFamily = "Varela-Round"; 
 })
+
+ 
+
+//this is regarding the home and about button update.
+
+// let aboutBtn = document.querySelector(".about");
+// let main = document.querySelector(".MAIN")
+
+// aboutBtn.addEventListener("click", function(){
+    //     main.classList.remove("container");
+    //     main.innerHTML = `<div class="modal-content">
+    //             <span class="close">&times;</span>
+    //             <h2>About Us</h2>
+    //             <p>Your content goes here...</p>
+    //         </div>`;
+    //    let modal = document.querySelector(".modal-content");
+    //    let closeBtn = document.querySelector(".close");
+    //   main.style.display= none; /* Hidden by default */
+    //   main.style.position: fixed; 
+    //   main.style.z-index: 1; 
+    //   main.style.left: 0;
+    //   main.style.top: 0;
+    //   main.style.width: 100%; 
+//   main.style.min-height: 80vh; 
+//   main.style.overflow: auto; 
+//   main.style.background-color: black; 
+//   main.style.background-color: rgba(0,0,0,0.4); 
+
+//   modal.style.background-color= white;
+//     modal.style.margin= 15% auto; 
+//     modal.style.padding= 20px;
+//     modal.style.border= 1px solid #888;
+//     modal.style.width= 80%; 
+
+
+//     closeBtn.style.color: #aaa;
+//     closeBtn.style.float: right;
+//     closeBtn.style.font-size: 28px;
+//     closeBtn.style.font-weight: bold;
+// })
+
+let homeBtn = document.querySelector(".home");
+homeBtn.style.cursor = "pointer";
+const aboutBtn = document.querySelector(".about");
+aboutBtn.style.cursor = "pointer";
+
+aboutBtn.addEventListener("click", function() {
+    // Create the popup element
+    const popup = document.createElement("div");
+    popup.className = "popup";
+
+    // Create the content for the popup
+    const popupContent = document.createElement("div");
+    popupContent.className = "popup-content";
+
+    const closeBtn = document.createElement("span");
+    closeBtn.className = "close";
+    closeBtn.innerHTML = "&times;"; // Close button
+
+    const title = document.createElement("h2");
+    title.textContent = "About Me";
+
+    const paragraph = document.createElement("p");
+    paragraph.innerHTML = `
+        My name is <strong>Shikhar Raj</strong>, and I am an aspiring software engineer.<br>
+        I have created a Spotify clone using HTML, CSS, and JavaScript, showcasing my skills in web development.<br>
+        I'm passionate about building user-friendly applications and continuously improving my skills in software engineering.
+    `;
+
+    // Append elements to the popup content
+    popupContent.appendChild(closeBtn);
+    popupContent.appendChild(title);
+    popupContent.appendChild(paragraph);
+
+    // Append content to the popup
+    popup.appendChild(popupContent);
+
+    // Append popup to the body
+    document.body.appendChild(popup);
+
+    // Show the popup
+    popup.style.display = "block";
+
+    aboutBtn.style.backgroundColor = "black";
+    homeBtn.style.backgroundColor = "#242424";
+
+    // Close the popup when the close button is clicked
+    closeBtn.addEventListener("click", function() {
+        homeBtn.style.backgroundColor = "black";
+        aboutBtn.style.backgroundColor = "#242424";
+        popup.style.display = "none";
+        document.body.removeChild(popup); // Remove the popup from the DOM
+    });
+
+    homeBtn.addEventListener("click", function() {
+        homeBtn.style.backgroundColor = "black";
+        aboutBtn.style.backgroundColor = "#242424";
+        popup.style.display = "none";
+        document.body.removeChild(popup); // Remove the popup from the DOM
+    });
+
+    // Close the popup if the user clicks outside the popup content
+    window.addEventListener("click", function(event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+            document.body.removeChild(popup); // Remove the popup from the DOM
+        }
+    });
+});
+
 
 // audioElement.play();
 // handle play pause click
@@ -166,4 +276,3 @@ outerContainer.addEventListener('wheel', (event) => {
   event.preventDefault();
   outerContainer.scrollLeft += event.deltaY;
 });
-
